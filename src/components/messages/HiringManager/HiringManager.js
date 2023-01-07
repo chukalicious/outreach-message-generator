@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { clearForm } from "../../../helpers/clearForm";
 import { initialState } from "./HiringManagerContainer";
 
