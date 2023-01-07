@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import HiringManager from "./HiringManager";
 import FinishedMessage from "./FinishedMessage";
 
@@ -35,11 +35,10 @@ const HiringManagerContainer = () => {
     });
   };
 
-  useEffect(() => {}, []);
   return (
     <>
       <HiringManager collectValues={collectValues} />
-      <FinishedMessage />{" "}
+      <FinishedMessage blanks={collected} />{" "}
     </>
   );
 };
