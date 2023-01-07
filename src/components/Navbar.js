@@ -35,7 +35,7 @@ const Navbar = () => {
                   </Link>
                 </button>
               </li>
-              <li tabIndex={0}>
+              <li tabIndex={0} className="dropdown dropdown-hover">
                 <button>
                   For Peer
                   <svg
@@ -48,7 +48,7 @@ const Navbar = () => {
                     <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                   </svg>
                 </button>
-                <ul className="p-2 bg-base-100">
+                <ul className="dropdown-content p-2 bg-base-100">
                   <li>
                     <button>
                       <Link to="/email-to-peer">Email Message</Link>
