@@ -1,21 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import { clearForm } from "../../../helpers/clearForm";
+import { initialState } from "./HiringManagerContainer";
 
-const initialState = {
-  jobTitle: "",
-  contactName: "",
-  jobDepartment: "",
-  companyName: "",
-  goodFit1: "",
-  goodFit2: "",
-  skill1: "",
-  skill2: "",
-  skill3: "",
-  dayToMeet: "",
-};
-
-const HiringManager = () => {
+const HiringManager = (props) => {
+  console.log("HiringManager: props: ", props);
   const [input, setInput] = useState(initialState);
 
   const handleChange = (e) => {
@@ -25,6 +14,7 @@ const HiringManager = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("form submitted");
+    props.collectValues(input);
     clearForm(setInput, initialState);
   };
   console.log("HiringManager: input: ", input);
