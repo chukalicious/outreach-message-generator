@@ -6,7 +6,7 @@ module.exports = {
   },
   daisyui: {
     styled: true,
-    themes: ["wireframe"],
+    themes: ["cmyk"],
     base: true,
     utils: true,
     logs: true,
