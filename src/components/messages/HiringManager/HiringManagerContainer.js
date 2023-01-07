@@ -36,10 +36,14 @@ const HiringManagerContainer = () => {
   };
 
   return (
-    <>
-      <HiringManager collectValues={collectValues} />
-      <FinishedMessage blanks={collected} />{" "}
-    </>
+    <div className="flex px-8">
+      <div className="">
+        <HiringManager collectValues={collectValues} />
+      </div>
+      <div>
+        <FinishedMessage blanks={collected} />
+      </div>
+    </div>
   );
 };
 
