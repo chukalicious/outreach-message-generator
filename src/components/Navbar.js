@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-secondary text-secondary-content">
       <div className="flex-1">
         <button className="btn btn-ghost normal-case text-xl">
           Outreach Message Generator
         </button>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1 bg-base-100 text-base-content rounded-xl">
           <li tabIndex={0}>
             <button>
               Choose a template

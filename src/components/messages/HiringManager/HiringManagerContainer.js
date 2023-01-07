@@ -36,7 +36,7 @@ const HiringManagerContainer = () => {
   };
 
   return (
-    <div className="flex px-8">
+    <div className="flex px-8 mt-24">
       <div className="">
         <HiringManager collectValues={collectValues} />
       </div>
