@@ -56,7 +56,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <button>
-                      <Link to="linkedIn-to-peer">
+                      <Link to="/linkedIn-to-peer">
                         LinkedIn Message (Short)
                       </Link>
                     </button>
