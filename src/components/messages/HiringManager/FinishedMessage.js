@@ -1,4 +1,3 @@
-import { useState } from "react";
 const FinishedMessage = (props) => {
   console.log("FinishedMessage: props: ", props);
 
