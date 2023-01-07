@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import HiringManager from "./HiringManager";
+import FinishedMessage from "./FinishedMessage";
 
 export const initialState = {
   jobTitle: "",
@@ -34,8 +35,16 @@ const HiringManagerContainer = () => {
     });
   };
 
-  useEffect(() => {}, []);
-  return <HiringManager collectValues={collectValues} />;
+  return (
+    <div className="flex px-8">
+      <div className="">
+        <HiringManager collectValues={collectValues} />
+      </div>
+      <div>
+        <FinishedMessage blanks={collected} />
+      </div>
+    </div>
+  );
 };
 
 export default HiringManagerContainer;

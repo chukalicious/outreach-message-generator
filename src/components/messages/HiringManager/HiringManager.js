@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { clearForm } from "../../../helpers/clearForm";
 import { initialState } from "./HiringManagerContainer";
 
@@ -19,7 +18,7 @@ const HiringManager = (props) => {
   };
   console.log("HiringManager: input: ", input);
   return (
-    <div className="flex flex-col w-[75%] mx-auto">
+    <div className="flex flex-col w-[90%] mx-auto bg-primary rounded-xl pb-8 mb-12">
       <h1 className="text-3xl p-4">
         Fill in the blanks and click on generate to create your message:
       </h1>
@@ -33,7 +32,7 @@ const HiringManager = (props) => {
               onChange={handleChange}
               value={input.jobTitle}
               placeholder="Job Title"
-              className="input w-full max-w-xs input-primary input-sm"
+              className="input w-full max-w-xs input-secondary input-sm"
             />
             !
           </h3>
@@ -45,7 +44,7 @@ const HiringManager = (props) => {
               value={input.contactName}
               name="contactName"
               onChange={handleChange}
-              className="input w-full max-w-xs input-primary input-sm"
+              className="input w-full max-w-xs input-secondary input-sm"
             />{" "}
           </p>
           <p className="py-4">
@@ -59,7 +58,7 @@ const HiringManager = (props) => {
               value={input.jobDepartment}
               onChange={handleChange}
               placeholder="Job Department name"
-              className="input w-full max-w-xs input-sm input-primary"
+              className="input w-full max-w-xs input-sm input-secondary"
             />{" "}
             team is solving at{" "}
             <input
@@ -68,7 +67,7 @@ const HiringManager = (props) => {
               value={input.companyName}
               onChange={handleChange}
               placeholder="Company Name"
-              className="input w-full max-w-xs input-primary input-sm"
+              className="input w-full max-w-xs input-secondary input-sm"
             />{" "}
             — as soon as I saw that you are looking for someone that both{" "}
             <input
@@ -77,7 +76,7 @@ const HiringManager = (props) => {
               value={input.goodFit1}
               onChange={handleChange}
               placeholder="Good Fit #1"
-              className="input w-full max-w-xs input-primary input-sm"
+              className="input w-full max-w-xs input-secondary input-sm"
             />{" "}
             and{" "}
             <input
@@ -86,7 +85,7 @@ const HiringManager = (props) => {
               value={input.goodFit2}
               onChange={handleChange}
               placeholder="Good Fit #2"
-              className="input w-full max-w-xs input-primary input-sm"
+              className="input w-full max-w-xs input-secondary input-sm"
             />
             , I had to reach out!
           </p>
@@ -99,7 +98,7 @@ const HiringManager = (props) => {
               value={input.skill1}
               onChange={handleChange}
               placeholder="Tech Skill #1"
-              className="input input-bordered input-primary w-full input-sm max-w-xs"
+              className="input input-bordered input-secondary w-full input-sm max-w-xs"
             />
             ,{" "}
             <input
@@ -108,7 +107,7 @@ const HiringManager = (props) => {
               value={input.skill2}
               onChange={handleChange}
               placeholder="Tech Skill #2"
-              className="input input-bordered input-primary input-sm w-full max-w-xs"
+              className="input input-bordered input-secondary input-sm w-full max-w-xs"
             />
             , and{" "}
             <input
@@ -117,7 +116,7 @@ const HiringManager = (props) => {
               value={input.skill3}
               onChange={handleChange}
               placeholder="Tech Skill #3"
-              className="input input-bordered input-primary input-sm w-full max-w-xs"
+              className="input input-bordered input-secondary input-sm w-full max-w-xs"
             />{" "}
             to the table, as well as experience developing in agile methodology
             on fully remote teams. I applied directly through your site, but am
@@ -133,14 +132,14 @@ const HiringManager = (props) => {
               value={input.dayToMeet}
               onChange={handleChange}
               placeholder="Enter a day here"
-              className="input input-bordered input-primary input-sm w-full max-w-xs"
+              className="input input-bordered input-secondary input-sm w-full max-w-xs"
             />
             ?
           </p>
           <p className="py-4">All the best, </p>
           <p>Katiuska Alicea de Leon</p>
         </div>
-        <button className="flex btn btn-primary mx-auto">Generate!</button>
+        <button className="flex btn btn-secondary mx-auto">Generate!</button>
       </form>
     </div>
   );
