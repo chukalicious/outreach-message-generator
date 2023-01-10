@@ -35,13 +35,23 @@ const HiringManagerContainer = () => {
     });
   };
 
+  const [submitLoader, setSubmitLoader] = useState(false);
+  console.log("HiringManagerContainer: submitLoader: ", submitLoader);
+
+  const messageLoader = () => {
+    setSubmitLoader(true);
+    setTimeout(() => {
+      setSubmitLoader(false);
+    }, 2000);
+  };
+
   return (
     <div className="flex px-8 mt-24">
       <div className="">
-        <HiringManager collectValues={collectValues} />
+        <HiringManager collectValues={collectValues} loader={messageLoader} />
       </div>
       <div>
-        <FinishedMessage blanks={collected} />
+        <FinishedMessage blanks={collected} submitLoader={submitLoader} />
       </div>
     </div>
   );

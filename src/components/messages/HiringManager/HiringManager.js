@@ -13,6 +13,7 @@ const HiringManager = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("form submitted");
+    props.loader();
     props.collectValues(input);
     clearForm(setInput, initialState);
   };
