@@ -44,7 +44,7 @@ const EmailValidator = () => {
 
   useEffect(() => {
     schema.isValid(email).then((valid) => setDisabled(!valid));
-  }, [email, emailErrors, schema]);
+  }, [email, emailErrors]);
 
   const clear = (e) => {
     e.preventDefault();
