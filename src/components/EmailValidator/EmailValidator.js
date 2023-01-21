@@ -76,7 +76,7 @@ const EmailValidator = (props) => {
             Validate
           </button>
 
-          <button onClick={clear} className="btn btn-secondary mt-6">
+          <button onClick={clear} className="btn btn-ghost bg-base-300 mt-6">
             Clear Form
           </button>
         </div>
