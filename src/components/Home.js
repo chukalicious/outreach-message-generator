@@ -1,6 +1,6 @@
-import EmailValidator from "./EmailValidator/EmailValidator";
+import EmailValidatorContainer from "../components/EmailValidator";
 const Home = () => {
-  return <EmailValidator />;
+  return <EmailValidatorContainer />;
 };
 
 export default Home;
