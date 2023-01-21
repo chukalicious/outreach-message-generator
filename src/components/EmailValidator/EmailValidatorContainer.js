@@ -14,7 +14,7 @@ const EmailValidatorContainer = () => {
   useEffect(() => {
     axios
       .get(
-        `https://emailvalidation.abstractapi.com/v1/?api_key=df3b9c21381f428f8ce52f4cbebdf0df&email=${emailAddress}`
+        `https://emailvalidation.abstractapi.com/v1/?api_key=${process.env.REACT_APP_API_KEY}&email=${emailAddress}`
       )
       .then((response) => {
         console.log(response.data);
