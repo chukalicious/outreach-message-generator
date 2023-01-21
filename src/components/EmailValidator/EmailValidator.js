@@ -9,13 +9,10 @@ const initialErrors = {
 };
 const initialDisabled = true;
 
-const EmailValidator = () => {
+const EmailValidator = (props) => {
   const [email, setEmail] = useState(initialState);
-  console.log(email);
   const [emailErrors, setEmailErrors] = useState(initialErrors);
-  console.log(emailErrors);
   const [disabled, setDisabled] = useState(initialDisabled);
-  console.log(disabled);
 
   const validate = (name, value) => {
     yup
@@ -53,6 +50,7 @@ const EmailValidator = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    props.getEmailAddress(email);
     clear(e);
   };
   return (
@@ -70,7 +68,10 @@ const EmailValidator = () => {
             placeholder="Email address to verify"
             className="input input-bordered w-full max-w-xs input-primary"
           />
-          <label className="label"></label>
+          <label className="label">
+            {" "}
+            <div className="text-error text-sm">{emailErrors.email}</div>
+          </label>
           <button disabled={disabled} className="btn btn-primary">
             Validate
           </button>
