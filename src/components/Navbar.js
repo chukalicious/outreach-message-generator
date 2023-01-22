@@ -7,7 +7,7 @@ const Navbar = () => {
           to="/"
           className="btn btn-ghost normal-case text-xl text-primary-content"
         >
-          Outreach Message Email Validator
+          Email Address Validator
         </Link>
       </div>
       <div className="flex-none gap-2">
