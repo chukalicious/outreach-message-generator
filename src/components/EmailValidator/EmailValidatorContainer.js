@@ -1,16 +1,15 @@
 import EmailValidator from "./EmailValidator";
 import AlertSuccess from "./AlertSuccess";
+import AlertFail from "./AlertFail";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { RotatingLines } from "react-loader-spinner";
 
 const EmailValidatorContainer = () => {
   const [emailAddress, setEmailAddress] = useState("");
-  const [deliverable, setDeliverable] = useState(false);
+  const [deliverable, setDeliverable] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  console.log("isSubmitted: ", isSubmitted);
   const [isLoading, setIsLoading] = useState(false);
-  console.log("isLoading: ", isLoading);
 
   const getEmailAddress = (address) => {
     setEmailAddress(address.email);
@@ -21,11 +20,11 @@ const EmailValidatorContainer = () => {
       setIsLoading(true);
     }
     axios
-      .get(
-        // `https://emailvalidation.abstractapi.com/v1/?api_key=${process.env.REACT_APP_API_KEY}&email=${emailAddress}`
-        "http://localhost:6000"
-      )
+      .get
+      // `https://emailvalidation.abstractapi.com/v1/?api_key=${process.env.REACT_APP_API_KEY}&email=${emailAddress}`
+      ()
       .then((response) => {
+        console.log(response.data);
         setIsLoading(false);
         response.data.deliverability === "DELIVERABLE"
           ? setDeliverable(true)
@@ -54,7 +53,8 @@ const EmailValidatorContainer = () => {
           />
         </div>
       ) : null}
-      {/* <AlertSuccess isDeliverable={deliverable} loading={isLoading} /> */}
+      {deliverable && <AlertSuccess />}
+      {deliverable === false ? <AlertFail /> : null}
     </>
   );
 };
