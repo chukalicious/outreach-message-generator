@@ -1,16 +1,16 @@
 import EmailValidator from "./EmailValidator";
 import AlertSuccess from "./AlertSuccess";
+import AlertFail from "./AlertFail";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { RotatingLines } from "react-loader-spinner";
 
 const EmailValidatorContainer = () => {
   const [emailAddress, setEmailAddress] = useState("");
-  const [deliverable, setDeliverable] = useState(false);
+  const [deliverable, setDeliverable] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  console.log("isSubmitted: ", isSubmitted);
   const [isLoading, setIsLoading] = useState(false);
-  console.log("isLoading: ", isLoading);
+  const [makeAPICall, setMakeAPICall] = useState(false);
 
   const getEmailAddress = (address) => {
     setEmailAddress(address.email);
@@ -20,10 +20,10 @@ const EmailValidatorContainer = () => {
     if (isSubmitted) {
       setIsLoading(true);
     }
+    if (!makeAPICall) return;
     axios
       .get(
-        // `https://emailvalidation.abstractapi.com/v1/?api_key=${process.env.REACT_APP_API_KEY}&email=${emailAddress}`
-        "http://localhost:6000"
+        `https://emailvalidation.abstractapi.com/v1/?api_key=${process.env.REACT_APP_API_KEY}&email=${emailAddress}`
       )
       .then((response) => {
         setIsLoading(false);
@@ -35,13 +35,14 @@ const EmailValidatorContainer = () => {
         console.log(error);
         setIsLoading(false);
       });
-  }, [isSubmitted, emailAddress]);
+  }, [isSubmitted, emailAddress, makeAPICall]);
 
   return (
     <>
       <EmailValidator
         getEmailAddress={getEmailAddress}
         setIsSubmitted={setIsSubmitted}
+        setMakeAPICall={setMakeAPICall}
       />
       {isLoading === true ? (
         <div className="flex flex-col my-16 w-1/2 mx-auto">
@@ -54,7 +55,8 @@ const EmailValidatorContainer = () => {
           />
         </div>
       ) : null}
-      {/* <AlertSuccess isDeliverable={deliverable} loading={isLoading} /> */}
+      {deliverable && <AlertSuccess />}
+      {deliverable === false ? <AlertFail /> : null}
     </>
   );
 };

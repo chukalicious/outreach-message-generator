@@ -10,7 +10,6 @@ const initialErrors = {
 const initialDisabled = true;
 
 const EmailValidator = (props) => {
-  console.log("EmailValidator: props: ", props);
   const [email, setEmail] = useState(initialState);
   const [emailErrors, setEmailErrors] = useState(initialErrors);
   const [disabled, setDisabled] = useState(initialDisabled);
@@ -53,6 +52,7 @@ const EmailValidator = (props) => {
     e.preventDefault();
     props.getEmailAddress(email);
     props.setIsSubmitted(true);
+    props.setMakeAPICall(true);
     clear(e);
   };
   return (
