@@ -53,6 +53,7 @@ const EmailValidator = (props) => {
     e.preventDefault();
     props.getEmailAddress(email);
     props.setIsSubmitted(true);
+    props.setMakeAPICall(true);
     clear(e);
   };
   return (
