@@ -1,5 +1,4 @@
-const AlertSuccess = (props) => {
-  console.log("Alert: props: ", props);
+const AlertSuccess = () => {
   return (
     <div className="w-full">
       <div className="flex alert alert-info shadow-lg max-w-xs mx-auto">

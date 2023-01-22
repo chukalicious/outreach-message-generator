@@ -10,7 +10,6 @@ const initialErrors = {
 const initialDisabled = true;
 
 const EmailValidator = (props) => {
-  console.log("EmailValidator: props: ", props);
   const [email, setEmail] = useState(initialState);
   const [emailErrors, setEmailErrors] = useState(initialErrors);
   const [disabled, setDisabled] = useState(initialDisabled);

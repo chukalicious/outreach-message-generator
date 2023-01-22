@@ -26,7 +26,6 @@ const EmailValidatorContainer = () => {
         `https://emailvalidation.abstractapi.com/v1/?api_key=${process.env.REACT_APP_API_KEY}&email=${emailAddress}`
       )
       .then((response) => {
-        console.log(response.data);
         setIsLoading(false);
         response.data.deliverability === "DELIVERABLE"
           ? setDeliverable(true)
